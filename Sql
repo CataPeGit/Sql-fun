@@ -1,0 +1,64 @@
+/*
+--TABEL STUDENTI 
+
+CREATE TABLE student (
+    student_id INT AUTO_INCREMENT,
+    nume VARCHAR(20) NOT NULL,
+    major Varchar(20) DEFAULT 'indecis',
+    PRIMARY KEY (student_id) 
+);
+
+DESCRIBE student;
+
+DROP TABLE student;
+
+ALTER TABLE student ADD NotaExamen DECIMAL(3 , 2);
+
+Alter TABLE student DROP COLUMN NotaExamen;
+
+INSERT INTO student(nume , major) VALUES('Jack' , 'Biologie');
+INSERT INTO student(nume , major) VALUES('Catrina' , 'Sociologie');
+INSERT INTO student(nume , major) VALUES('Clara' , 'Chimie');
+INSERT INTO student(nume , major) VALUES('Jack' , 'Biologie');
+INSERT INTO student(nume , major) VALUES('Mihai' , 'Informatica');
+
+SELECT * FROM student;
+
+UPDATE student
+SET major = 'Bio'
+WHERE major = 'BIo' ;
+
+UPDATE student
+SET major = 'Mate-info'
+WHERE student_id = 4;
+
+UPDATE student
+SET major = 'Bio-chimie'
+WHERE major = 'Bio' OR major = 'Chimie';
+
+UPDATE student
+SET nume = 'Tom' , major = 'undecided'
+WHERE student_id = 1 ;
+
+DELETE FROM student
+WHERE nume = 'Tom' and major = 'undecided';
+
+DELETE FROM student;
+
+SELECT *
+FROM student
+ORDER BY student_id DESC
+LIMIT 2;
+
+SELECT nume , major 
+FROM student
+WHERE major = 'Chimie' OR nume = 'Catrina';
+
+SELECT *
+FROM student
+WHERE student_id <= 3 AND nume <> 'Jack';
+
+SELECT *
+FROM student
+WHERE major IN ('Biologie' , 'Chimie') and student_id > 2;
+*/
